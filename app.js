@@ -93,11 +93,17 @@ app.post('/admin/recipes/newrecipe', (req, res) => {
       res.redirect('/admin/recipes')
     })
   }
-
-  // newRecipe.save(function(err, recipe) {
-  //   if (err) {
-  //     console.error(err)
-  //   }
-  //   res.redirect('/admin/recipes')
-  // })
+})
+// delete 食谱
+app.delete('/admin/recipes', (req, res) => {
+  const id = req.query.id
+  if (id) {
+    Recipe.remove({_id: id}, (err, recipe) => {
+      if (err) {
+        console.error(err)
+      } else {
+        res.json({success: 1})
+      }
+    })
+  }
 })
