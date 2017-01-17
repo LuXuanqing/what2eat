@@ -2,15 +2,16 @@ extends layout.pug
 block content
   .container
     .row
-      form.form-horizontal
+      form.form-horizontal(method="post" action="/admin/recipes/newrecipe")
+        input(type="hidden" name="recipe[_id]" value=recipe._id)
         .form-group
           label.col-sm-2.control-label(for="inputName") 名称
           .col-sm-10
-            input.form-control#inputName(type="text", name="recipe.name" value=recipe.name)
+            input.form-control#inputName(type="text", name="recipe[name]" value=recipe.name)
         .form-group
           label.col-sm-2.control-label(for="inputContent") 内容
           .col-sm-10
-            textarea.form-control#inputContent(rows="12" name="recipe.content")=recipe.content
+            textarea.form-control#inputContent(rows="12" name="recipe[content]")=recipe.content
         .form-group
           .col-sm-offset-2.col-sm-10
             button.btn.btn-success(type="submit") 保存
