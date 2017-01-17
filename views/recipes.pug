@@ -12,11 +12,10 @@ block content
             th 删除
           tbody
             each recipe in recipes
-              - console.log(recipe)
-              tr(class="recipe-id-#{recipe._id}")
-                td: a(target="_blank", href="/admin/recipes/#{recipe._id}") #{recipe.name}
+              tr(class=`recipe-id-${recipe._id}`)
+                td: a(target="_blank", href=`/admin/recipes/${recipe._id}`) #{recipe.name}
                 //- td.conetnt #{recipe.content}
                 td #{recipe.meta.createdAt}
                 td #{recipe.meta.updateAt}
-                td: button.btn.btn-danger.del(data-id="#{recipe._id}") 删除
+                td: button.btn.btn-danger.del(data-id=recipe._id) 删除
     script(src="/js/admin.js")

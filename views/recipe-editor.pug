@@ -6,10 +6,11 @@ block content
         .form-group
           label.col-sm-2.control-label(for="inputName") 名称
           .col-sm-10
-            - console.log(recipe)
             input.form-control#inputName(type="text", name="recipe.name" value=recipe.name)
         .form-group
           label.col-sm-2.control-label(for="inputContent") 内容
           .col-sm-10
-            textarea.form-control#inputContent(name="recipe.content")=recipe.content
-    script.
+            textarea.form-control#inputContent(rows="12" name="recipe.content")=recipe.content
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            button.btn.btn-success(type="submit") 保存
