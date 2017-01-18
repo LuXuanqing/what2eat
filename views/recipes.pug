@@ -9,7 +9,7 @@ block content
           tr
             th 名称
             th 内容
-            th 创建时间
+            //- th 创建时间
             th 更新时间
             th 删除
           tbody
@@ -17,7 +17,7 @@ block content
               tr(class=`recipe-id-${recipe._id}`)
                 td: a(target="_blank", href=`/admin/recipes/${recipe._id}`) #{recipe.name}
                 td.conetnt #{recipe.content}
-                td #{recipe.meta.createAt}
+                //- td #{recipe.meta.createAt}
                 td #{recipe.meta.updateAt}
                 td: button.btn.btn-danger.del(data-id=recipe._id) 删除
-    script(src="/js/admin.js")
+  script(src="/js/admin.js")

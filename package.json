@@ -5,5 +5,15 @@
     "mongoose": "^4.7.7",
     "pug": "^2.0.0-beta6",
     "underscore": "^1.8.3"
-  }
+  },
+  "name": "what2eat",
+  "version": "0.1.0",
+  "description": "test",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lu.xuanqing",
+  "license": "ISC"
 }

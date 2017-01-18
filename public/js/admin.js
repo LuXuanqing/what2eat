@@ -1,6 +1,4 @@
-console.log('admin.js loaded')
 $(document).ready(function() {
-  console.log('jq loaded')
   $('.del').on('click', function(event) {
     var target = $(event.target)
     var id = target.data('id')
