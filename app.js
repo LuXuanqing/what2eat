@@ -107,3 +107,26 @@ app.delete('/admin/recipes', (req, res) => {
     })
   }
 })
+
+//randomRecipe
+app.get('/randomRecipe', (req, res) => {
+  Recipe.fetch((err, recipes) => {
+    function getRandOf(arr) {
+      var length = arr.length
+      var index = Math.floor(Math.random() * length)
+      return arr[index]
+    }
+    var recipe = getRandOf(recipes)
+    res.render('randomRecipe.pug', {
+      title: '给您推荐的食谱',
+      recipe: recipe
+    })
+  })
+})
+
+// what2eat
+app.get('/what2eat', (req, res) => {
+  res.render('what2eat.pug', {
+    title: '吃什么？'
+  })
+})

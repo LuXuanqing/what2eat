@@ -18,19 +18,16 @@ recipeSchema.pre('save', function(next) {
   next()
 })
 
-recipeSchema.statics = {
-  fetch: function(cb) {
-    return this
-      .find({})
-      .sort({'meta.updateAt': -1})
-      .exec(cb)
-  },
-  fetchById: function(id, cb) {
-    return this
-      .findOne({_id: id})
-      .exec(cb)
-  }
+recipeSchema.statics.fetch = function(cb) {
+  return this.find()
+    .sort({'meta.updateAt': -1})
+    .exec(cb)
 }
+recipeSchema.statics.fetchById = function(id, cb) {
+  return this.findOne({_id: id})
+    .exec(cb)
+}
+
 
 var Recipe = mongoose.model('Recipe', recipeSchema)
 
