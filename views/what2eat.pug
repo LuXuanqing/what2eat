@@ -1,6 +1,10 @@
 extends layout.pug
 block content
   .container
+    .row#displayer
+      h2.text-center#name
+      p.text-center#content
     .row
-      button.btn.btn-success.btn-lg#getRecipe
+      .col-sm-12
+        button.btn.btn-success.btn-lg#getRecipe 点我
   script(src="/js/what2eat.js")

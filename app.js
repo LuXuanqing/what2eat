@@ -108,7 +108,7 @@ app.delete('/admin/recipes', (req, res) => {
   }
 })
 
-//randomRecipe
+//处理GET随机食谱请求，返回一个json包含name和content
 app.get('/randomRecipe', (req, res) => {
   Recipe.fetch((err, recipes) => {
     function getRandOf(arr) {
@@ -117,10 +117,7 @@ app.get('/randomRecipe', (req, res) => {
       return arr[index]
     }
     var recipe = getRandOf(recipes)
-    res.render('randomRecipe.pug', {
-      title: '给您推荐的食谱',
-      recipe: recipe
-    })
+    res.json(recipe)
   })
 })
 
