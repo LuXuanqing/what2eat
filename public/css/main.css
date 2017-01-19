@@ -1,4 +1,5 @@
-#getRecipe {
-  margin-left: auto;
-  margin-right: auto;
+.block-center {
+  display: block;
+  width: 6em;
+  margin: 0 auto;
 }
